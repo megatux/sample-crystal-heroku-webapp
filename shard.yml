@@ -1,0 +1,7 @@
+name: heroku_mini_app
+version: 0.1.0
+
+authors:
+  - Cristian Molina <megatux@gmail.com>
+
+license: MIT

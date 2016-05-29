@@ -1,5 +1,6 @@
 require "./heroku_mini_app/*"
 
+require "json"
 require "ohm"
 require "kemal"
 
@@ -20,6 +21,11 @@ end
 get "/" do |env|
   "Hello world, got #{env.request.path}" +
     "\nRedis get: #{Ohm.redis.call("GET", "app-name")}"
+end
+
+get "/app_info" do |env|
+  env.response.content_type = "application/json"
+  {app_name: Ohm.redis.call("GET", "app-name")}.to_json
 end
 
 Kemal.config do |config|

@@ -9,3 +9,6 @@ license: MIT
 dependencies:
   ohm:
     github: soveran/ohm-crystal
+  kemal:
+    github: sdogruyol/kemal
+    branch: master

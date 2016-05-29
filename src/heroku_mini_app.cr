@@ -1,8 +1,11 @@
-require "http/server"
-require "option_parser"
-require "ohm"
+require "./heroku_mini_app/*"
 
-bind = "0.0.0.0"
+require "ohm"
+require "kemal"
+
+# module HerokuMiniApp
+# end
+
 port = 8080
 
 Ohm.redis = Resp.new ENV.fetch("REDIS_URL", "redis://127.0.0.1:6379")
@@ -14,11 +17,13 @@ OptionParser.parse! do |opts|
   end
 end
 
-server = HTTP::Server.new(bind, port) do |context|
-  context.response.content_type = "text/plain"
-  context.response << "Hello world, got #{context.request.path}"
-  context.response << "\nRedis get: #{Ohm.redis.call("GET", "app-name")}"
+get "/" do |env|
+  "Hello world, got #{env.request.path}" +
+    "\nRedis get: #{Ohm.redis.call("GET", "app-name")}"
 end
 
-puts "Listening on http://#{bind}:#{port}"
-server.listen
+Kemal.config do |config|
+  config.port = port
+end
+
+Kemal.run

@@ -1,5 +1,13 @@
 version: 1.0
 shards:
+  kemal:
+    github: sdogruyol/kemal
+    commit: c9b206d1d61ffc4f372828ee64dd9579388ac5ed
+
+  kilt:
+    github: jeromegn/kilt
+    version: 0.3.3
+
   nest:
     github: soveran/nest-crystal
     commit: 73c0e68836f445d14f3c032a8ef52dd3c76ed077
@@ -7,6 +15,10 @@ shards:
   ohm:
     github: soveran/ohm-crystal
     commit: d8bd874137d3fc5e62fd2653b56dd7c13089c76b
+
+  radix:
+    github: luislavena/radix
+    version: 0.3.0
 
   resp:
     github: soveran/resp-crystal

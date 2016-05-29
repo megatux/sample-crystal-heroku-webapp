@@ -1,0 +1,18 @@
+version: 1.0
+shards:
+  nest:
+    github: soveran/nest-crystal
+    commit: 73c0e68836f445d14f3c032a8ef52dd3c76ed077
+
+  ohm:
+    github: soveran/ohm-crystal
+    commit: d8bd874137d3fc5e62fd2653b56dd7c13089c76b
+
+  resp:
+    github: soveran/resp-crystal
+    commit: 06d2fc86aea60726f6995a8b508cf52dddca24c9
+
+  stal:
+    github: soveran/stal-crystal
+    commit: e0036d8aecdec6693d0473496719280e76ecf916
+

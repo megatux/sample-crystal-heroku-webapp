@@ -5,3 +5,7 @@ authors:
   - Cristian Molina <megatux@gmail.com>
 
 license: MIT
+
+dependencies:
+  ohm:
+    github: soveran/ohm-crystal
